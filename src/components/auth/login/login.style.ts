@@ -102,29 +102,28 @@ export const SubTitle = styled.span`
 `
 
 export const LoginT = styled.span`
+    position: absolute;
+    width: 88px;
+    height: 36px;
+    left: 247px;
+    top: 81px;
 
-position: absolute;
-width: 88px;
-height: 36px;
-left: 247px;
-top: 81px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
 
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 900;
-font-size: 30px;
-line-height: 36px;
-text-align: center;
-
-color: #000000;
+    color: #000000;
 `
 
 export const EmailBox = styled.div`
-position: absolute;
-width: 411px;
-height: 95px;
-left: 96px;
-top: 153px;
+    position: absolute;
+    width: 411px;
+    height: 95px;
+    left: 96px;
+    top: 153px;
 `
 
 export const EmailT = styled.span`
@@ -248,43 +247,32 @@ export const Button = styled.div`
 `
 
 export const NewUser = styled.span`
-/* New User? */
+    position: absolute;
+    width: 77px;
+    height: 18px;
+    left: 95px;
+    top: 533px;
 
-position: absolute;
-width: 77px;
-height: 18px;
-left: 95px;
-top: 533px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
 
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 700;
-font-size: 15px;
-line-height: 18px;
-/* identical to box height */
-
-color: #000000;
-
-
-
+    color: #000000;
 `
 export const GoSignup = styled.a`
-/* Sign Up */
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    margin-left:80px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 18px;
 
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
-margin-left:80px;
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 800;
-font-size: 15px;
-line-height: 18px;
-/* identical to box height */
-
-color: #4CAF50;
-
-
+    color: #4CAF50;
 `

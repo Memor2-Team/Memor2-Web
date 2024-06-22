@@ -42,51 +42,49 @@ export const Vector = styled.img`
 `
 
 export const NameT = styled.span`
-display:flex;
+    display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:center;
-    /* Park Sihyun */
 
-position: absolute;
-width: 232px;
-height: 48px;
-left: 208px;
-top: 368px;
+    position: absolute;
+    width: 232px;
+    height: 48px;
+    left: 208px;
+    top: 368px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
 
-color: #000000;
+    color: #000000;
 
 
 `
 
 export const EmailT = styled.span`
-display:flex;
+    display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:center;
-    /* sihyunpark@gmail.com */
 
-position: absolute;
-width: 348px;
-height: 36px;
-left: 151px;
-top: 423px;
+    position: absolute;
+    width: 348px;
+    height: 36px;
+    left: 151px;
+    top: 423px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 30px;
-line-height: 36px;
-text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
 
-color: #9E9E9E;
+    color: #9E9E9E;
 
 
 `
@@ -121,7 +119,6 @@ export const Button = styled.button`
 
     background: #4CAF50;
     border-radius: 20px;
-    /* 로그아웃 */
 
     position: absolute;
 

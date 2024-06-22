@@ -186,7 +186,6 @@ export const EmailT = styled.span`
     font-weight: 700;
     font-size: 30px;
     line-height: 36px;
-    /* identical to box height */
 
     color: #000000;
 `

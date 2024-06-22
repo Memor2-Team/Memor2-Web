@@ -11,9 +11,7 @@ const Myinfo = () => {
               <S.EmailT>sihyunpark@gmail.com</S.EmailT>
         </S.ProfileContainer>
         <S.ButtonContainer>
-            <S.Button>
-                <S.LogOut>로그아웃</S.LogOut>
-            </S.Button>
+            <S.Button>로그아웃</S.Button>
         </S.ButtonContainer>
     </S.ProfileMain>
   )

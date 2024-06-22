@@ -4,20 +4,28 @@ import * as S from './login.style';
 const Login = () => {
   return (
     <S.LoginMain>
-      <S.Leftbar>
-        <S.MemoryLogo src={MemoryLogo} />
-        <S.Title>Memory</S.Title>
-        <S.SubTitle>Sign in to access your personal memory</S.SubTitle>
-      </S.Leftbar>
-      <S.Rigntbar>
-        <S.LoginT>Login</S.LoginT>
-        <S.EmailT>Email</S.EmailT>
-        <S.EmailInput placeholder='sihyunpark@gmail.com' />
-        <S.PasswordT>Password</S.PasswordT>
-        <S.PasswordInput placeholder='Enter your Password' />
-        <S.Button><S.ButtonFont>Login</S.ButtonFont></S.Button>
-        <S.NewUser> New User <S.GoSignup href="">Sign Up</S.GoSignup></S.NewUser>
-      </S.Rigntbar>
+      <S.Left />
+      <S.Container>
+        <S.Leftbar>
+          <S.MemoryLogo src={MemoryLogo} />
+          <S.Title>Memory</S.Title>
+          <S.SubTitle>Sign in to access </S.SubTitle>
+          <S.SubTitle> your personal memory</S.SubTitle>
+        </S.Leftbar>
+        <S.Rightbar>
+          <S.LoginT>Log in</S.LoginT>
+          <S.EmailBox>
+            <S.EmailT>Email</S.EmailT>
+            <S.EmailInput placeholder='sihyunpark@gmail.com' />
+          </S.EmailBox>
+          <S.PasswordBox>
+            <S.PasswordT>Password</S.PasswordT>
+            <S.PasswordInput placeholder='Enter your Password' />
+          </S.PasswordBox>
+          <S.Button>Login</S.Button>
+          <S.NewUser> New User? <S.GoSignup href="http://localhost:3000/signup">SignUp</S.GoSignup></S.NewUser>
+        </S.Rightbar>
+      </S.Container>
     </S.LoginMain>
   );
 };

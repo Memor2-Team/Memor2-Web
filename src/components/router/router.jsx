@@ -4,6 +4,7 @@ import SignUp from "src/components/auth/signUp/signUp";
 import MainPage from "src/pages/main/page";
 import AllMemoPage from "src/pages/all/page";
 import MemoWritePage from "src/pages/write/page";
+import MyInfo from "src/pages/MyInfo/page";
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
       <Route path="/" element={<MainPage />} />
       <Route path="/all" element={<AllMemoPage />} />
       <Route path="/write" element={<MemoWritePage />} />
+      <Route path="/my-info" element={<MyInfo/>} />
     </Routes>
   );
 };

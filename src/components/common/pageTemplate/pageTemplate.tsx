@@ -6,7 +6,6 @@ import Layout from "../Layout/Layout";
 
 const PageTemplate = ({ children }: ChildProps) => {
   const { pathname } = useLocation();
-  console.log(pathname)
 
   return <Container>
     {pathname !== "/login" && pathname !== "/signup" && <Sidebar />}

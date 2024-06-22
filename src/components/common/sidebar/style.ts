@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 35%;
+    min-width: 370px;
     height: 100%;
 
     display: flex;
@@ -27,13 +27,14 @@ export const UserInfoBox = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    cursor: pointer;
 `
 
 export const UserInfo = styled.img`
     width: 45px;
     height: 100%;
 
-    cursor: pointer;
     margin-right: 10px;
 `
 

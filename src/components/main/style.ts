@@ -9,3 +9,8 @@ export const MainPage = styled.div`
     justify-content: center;
     align-items: center;
 `
+
+export const Main = styled.img`
+    width: 80%;
+    height: 80%;
+`

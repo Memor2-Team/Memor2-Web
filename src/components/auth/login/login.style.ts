@@ -34,7 +34,7 @@ export const Left = styled.div`
 
 export const Leftbar = styled.div`
     width: 418px;
-    height: 601px;
+    height: 598.5px;
 
     background-color: #4CAF50;
     z-index: index 999;

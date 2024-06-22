@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import "./font.css";
 
@@ -19,8 +19,14 @@ const GlobalStyle = createGlobalStyle`
         border: 0;
         background-color: transparent;
     }
+
+    input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
     
     ${reset}
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

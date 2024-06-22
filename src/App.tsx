@@ -1,8 +1,8 @@
 import React from 'react';
-import Router from "src/components/router/router"
+import Provider from './components/common/provider/provider';
 
 function App() {
-  return <Router />
+  return <Provider />
 }
 
 export default App;

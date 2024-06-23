@@ -34,7 +34,7 @@ export const Left = styled.div`
 
 export const Leftbar = styled.div`
     width: 418px;
-    height: 598.5px;
+    height: 625px;
 
     background-color: #4CAF50;
     z-index: index 999;
@@ -148,7 +148,7 @@ export const EmailInput = styled.input`
     height: 50px;
     top: 40px;
 
-    background: #F7FEF7;
+    background: #FFF;
     border: 1px solid #000000;
     border-radius: 5px;
     font-family: 'Pretendard';
@@ -156,7 +156,7 @@ export const EmailInput = styled.input`
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    text-align:center;
+    padding-left: 15px;
 
     &::placeholder{
         font-family: 'Pretendard';
@@ -166,7 +166,6 @@ export const EmailInput = styled.input`
         line-height: 24px;
 
         color: #A7A7A7;
-        text-align:center;
     }
 `
 export const PasswordBox = styled.div`
@@ -200,7 +199,7 @@ export const PasswordInput = styled.input`
     height: 50px;
     top:40px;
 
-    background: #F7FEF7;
+    background: #FFF;
     border: 1px solid #000000;
     border-radius: 5px;
     font-family: 'Pretendard';
@@ -208,7 +207,7 @@ export const PasswordInput = styled.input`
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    text-align:center;
+    padding-left: 15px;
 
     &::placeholder{
         font-family: 'Pretendard';
@@ -218,7 +217,6 @@ export const PasswordInput = styled.input`
         line-height: 24px;
 
         color: #A7A7A7;
-        text-align:center;
     }
 `
 
@@ -260,6 +258,7 @@ export const NewUser = styled.span`
     line-height: 18px;
 
     color: #000000;
+    cursor: pointer;
 `
 export const GoSignup = styled.a`
     position: absolute;
@@ -267,7 +266,7 @@ export const GoSignup = styled.a`
     right: 0%;
     top: 0%;
     bottom: 0%;
-    margin-left:80px;
+    margin-left: 85px;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 800;

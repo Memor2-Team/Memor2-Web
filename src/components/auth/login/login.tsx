@@ -1,7 +1,10 @@
 import MemoryLogo from 'src/assets/img/Memory Logo.svg';
 import * as S from './login.style';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <S.LoginMain>
       <S.Left />
@@ -22,8 +25,8 @@ const Login = () => {
             <S.PasswordT>Password</S.PasswordT>
             <S.PasswordInput placeholder='Enter your Password' />
           </S.PasswordBox>
-          <S.Button>Login</S.Button>
-          <S.NewUser> New User? <S.GoSignup href="http://localhost:3000/signup">SignUp</S.GoSignup></S.NewUser>
+          <S.Button onClick={() => navigate("/")}>Login</S.Button>
+          <S.NewUser> New User? <S.GoSignup onClick={() => navigate("/signup")}>SignUp</S.GoSignup></S.NewUser>
         </S.Rightbar>
       </S.Container>
     </S.LoginMain>

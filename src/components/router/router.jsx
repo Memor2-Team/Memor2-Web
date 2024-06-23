@@ -6,6 +6,7 @@ import MemoPage from "src/pages/memo/page";
 import AllMemoPage from "src/pages/all/page";
 import MemoWritePage from "src/pages/write/page";
 import MemoModifyPage from "src/pages/modify/page"
+import MyInfo from "src/pages/MyInfo/page";
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
       <Route path="/all" element={<AllMemoPage />} />
       <Route path="/write" element={<MemoWritePage />} />
       <Route path="/modify/:id" element={<MemoModifyPage />} />
+      <Route path="/my-info" element={<MyInfo/>} />
     </Routes>
   );
 };

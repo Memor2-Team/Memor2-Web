@@ -39,11 +39,11 @@ const Sidebar = () => {
         <S.MemoList>
         {Array.from({ length: 10 }).map((_, idx) => (
           <S.Memo key={idx}>
-            <S.MemoTitleWrap onClick={() => navigate("/")}>
+            <S.MemoTitleWrap onClick={() => navigate(`/${idx}`)}>
               <S.MemoTitle>일하기 싫어요</S.MemoTitle>
             </S.MemoTitleWrap>
             <S.MemoButtonWrap>
-              <S.MemoButton src={MemoModifyIcon} onClick={() => navigate("/modify")}></S.MemoButton>
+              <S.MemoButton src={MemoModifyIcon} onClick={() => navigate(`/modify/${idx}`)}></S.MemoButton>
             </S.MemoButtonWrap>
             <S.MemoButtonWrap>
               <S.MemoButton src={MemoDeleteIcon}></S.MemoButton>

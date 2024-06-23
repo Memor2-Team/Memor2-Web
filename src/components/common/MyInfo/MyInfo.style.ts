@@ -130,4 +130,6 @@ export const Button = styled.button`
     line-height: 36px;
 
     color: #F2F2F2;
+
+    cursor: pointer;
 `

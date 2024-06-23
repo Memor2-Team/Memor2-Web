@@ -34,7 +34,7 @@ export const Left = styled.div`
 
 export const Leftbar = styled.div`
     width: 418px;   
-    height: 601px;
+    height: 625px;
 
     background-color: #4CAF50;
     z-index: index 999;
@@ -148,7 +148,7 @@ export const IDInput = styled.input`
     height: 50px;
     top: 40px;
 
-    background: #F7FEF7;
+    background: #FFF;
     border: 1px solid #000000;
     border-radius: 5px;
     font-family: 'Pretendard';
@@ -156,7 +156,7 @@ export const IDInput = styled.input`
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    text-align:center;
+    padding-left: 15px;
 
     &::placeholder{
         font-family: 'Pretendard';
@@ -166,7 +166,6 @@ export const IDInput = styled.input`
         line-height: 24px;
 
         color: #A7A7A7;
-        text-align:center;
     }
 `
 
@@ -196,7 +195,7 @@ export const EmailInput = styled.input`
     height: 50px;
     top: 40px;
 
-    background: #F7FEF7;
+    background: #FFF;
     border: 1px solid #000000;
     border-radius: 5px;
     font-family: 'Pretendard';
@@ -204,7 +203,7 @@ export const EmailInput = styled.input`
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    text-align:center;
+    padding-left: 15px;
 
     &::placeholder{
         font-family: 'Pretendard';
@@ -214,7 +213,6 @@ export const EmailInput = styled.input`
         line-height: 24px;
 
         color: #A7A7A7;
-        text-align:center;
     }
 
 `
@@ -245,7 +243,7 @@ export const PasswordInput = styled.input`
     height: 50px;
     top: 140px;
 
-    background: #F7FEF7;
+    background: #FFF;
     border: 1px solid #000000;
     border-radius: 5px;
     font-family: 'Pretendard';
@@ -253,7 +251,7 @@ export const PasswordInput = styled.input`
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    text-align:center;
+    padding-left: 15px;
 
     &::placeholder{
         font-family: 'Pretendard';
@@ -263,7 +261,6 @@ export const PasswordInput = styled.input`
         line-height: 24px;
 
         color: #A7A7A7;
-        text-align:center;
     }
 `
 

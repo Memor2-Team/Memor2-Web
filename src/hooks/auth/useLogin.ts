@@ -13,6 +13,7 @@ const useLogin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isPasswordBtn, setIsPasswordBtn] = useState(false);
 
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -20,6 +21,10 @@ const useLogin = () => {
 
   const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
+  };
+
+  const handleClickPw = () => {
+    setIsPasswordBtn((prev) => !prev);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -34,15 +39,17 @@ const useLogin = () => {
 
   const handleClickLogin = async () => {
     try {
-      await axios.post(`${CONFIG.server}/auth/sign-in`, {
-        email: email,
-        password: password,
-      }).then((res) => {
-        token.setToken(ACCESS_TOKEN_KEY, res.data.data.accessToken);
-        token.setToken(REFRESH_TOKEN_KEY, res.data.data.refreshToken);
-        showToast("success", "로그인 성공");
-        navigate("/");
-      });
+      await axios
+        .post(`${CONFIG.server}/auth/sign-in`, {
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          token.setToken(ACCESS_TOKEN_KEY, res.data.data.accessToken);
+          token.setToken(REFRESH_TOKEN_KEY, res.data.data.refreshToken);
+          showToast("success", "로그인 성공");
+          navigate("/");
+        });
     } catch (error) {
       console.log(error);
     }
@@ -51,8 +58,10 @@ const useLogin = () => {
   return {
     email,
     password,
+    isPasswordBtn,
     handleChangeEmail,
     handleChangePassword,
+    handleClickPw,
     handleKeyDown,
     GoToSignUp,
     handleClickLogin,

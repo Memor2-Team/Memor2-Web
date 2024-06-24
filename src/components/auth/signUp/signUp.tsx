@@ -1,5 +1,7 @@
 import React from "react";
-import MemoryLogo from 'src/assets/img/Memory Logo.svg';
+import MemoryLogo from 'src/assets/img/common/Memory Logo.svg';
+import PwViewIcon from "src/assets/img/common/PwView_Icon.svg";
+import PwHideIcon from "src/assets/img/common/PwHide_Icon.svg";
 import * as S from './signUp.style';
 import useSignUp from "src/hooks/auth/useSignUp";
 
@@ -29,11 +31,12 @@ const SignUp = () => {
           <S.PasswordBox>
             <S.PasswordT>Password</S.PasswordT>
             <S.PasswordInput
-              type="password"
+              type={signUp.isPasswordBtn ? "text" : "password"}
               value={signUp.password} 
               placeholder='Enter your Password' 
               onChange={signUp.handleChangePassword} 
               onKeyDown={signUp.handleKeyDown} />
+            <S.PasswordButton src={signUp.isPasswordBtn ? PwViewIcon : PwHideIcon} onClick={signUp.handleClickPw} />
           </S.PasswordBox>
           <S.Button onClick={signUp.handleClickSignUp}>Sign Up</S.Button>
         </S.Rightbar>

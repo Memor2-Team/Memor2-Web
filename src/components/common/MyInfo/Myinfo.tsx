@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./MyInfo.style";
-import Vector from "src/assets/img/Vector.svg";
+import Vector from "src/assets/img/myInfo/Vector.svg";
 import useMyInfo from "src/hooks/myInfo/useMyInfo";
 
 const Myinfo = () => {

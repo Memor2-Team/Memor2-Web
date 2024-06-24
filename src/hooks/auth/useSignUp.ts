@@ -9,6 +9,7 @@ const useSignUp = () => {
   const [id, setId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isPasswordBtn, setIsPasswordBtn] = useState(false);
 
   const handleChangeId = (e: React.ChangeEvent<HTMLInputElement>) => {
     setId(e.target.value);
@@ -20,6 +21,10 @@ const useSignUp = () => {
 
   const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
+  };
+
+  const handleClickPw = () => {
+    setIsPasswordBtn((prev) => !prev);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -48,9 +53,11 @@ const useSignUp = () => {
     id,
     email,
     password,
+    isPasswordBtn,
     handleChangeId,
     handleChangeEmail,
     handleChangePassword,
+    handleClickPw,
     handleKeyDown,
     handleClickSignUp,
   };

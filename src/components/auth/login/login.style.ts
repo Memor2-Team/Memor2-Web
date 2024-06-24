@@ -194,7 +194,7 @@ export const PasswordT = styled.span`
 export const PasswordInput = styled.input`
     box-sizing: border-box;
 
-    position: absolute;
+    position: relative;
     width: 411px;
     height: 50px;
     top:40px;
@@ -218,6 +218,13 @@ export const PasswordInput = styled.input`
 
         color: #A7A7A7;
     }
+`
+
+export const PasswordButton = styled.img`
+    top: 58px;
+    right: 12px;
+    position: absolute;
+    cursor: pointer;
 `
 
 export const Button = styled.div`

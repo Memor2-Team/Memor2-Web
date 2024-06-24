@@ -73,7 +73,6 @@ const useSidebar = () => {
             size: 100,
           },
         }).then((res) => {
-          console.log(res.data.data);
           setMemoList(res.data.data);
         });
       } catch (error) {

@@ -1,9 +1,11 @@
-import MemoryLogo from 'src/assets/img/Memory Logo.svg';
-import * as S from './login.style';
-import { useNavigate } from 'react-router-dom';
+import MemoryLogo from "src/assets/img/common/Memory Logo.svg";
+import PwViewIcon from "src/assets/img/common/PwView_Icon.svg";
+import PwHideIcon from "src/assets/img/common/PwHide_Icon.svg";
+import * as S from "./login.style";
+import useLogin from "src/hooks/auth/useLogin";
 
 const Login = () => {
-  const navigate = useNavigate();
+  const { ...login } = useLogin();
 
   return (
     <S.LoginMain>
@@ -19,14 +21,28 @@ const Login = () => {
           <S.LoginT>Log in</S.LoginT>
           <S.EmailBox>
             <S.EmailT>Email</S.EmailT>
-            <S.EmailInput placeholder='sihyunpark@gmail.com' />
+            <S.EmailInput
+              value={login.email}
+              placeholder="sihyunpark@gmail.com"
+              onChange={login.handleChangeEmail}
+            />
           </S.EmailBox>
           <S.PasswordBox>
             <S.PasswordT>Password</S.PasswordT>
-            <S.PasswordInput placeholder='Enter your Password' />
+            <S.PasswordInput
+              type={login.isPasswordBtn ? "text" : "password"}
+              value={login.password}
+              placeholder="Enter your Password"
+              onChange={login.handleChangePassword}
+              onKeyDown={login.handleKeyDown}
+            />
+            <S.PasswordButton src={login.isPasswordBtn ? PwViewIcon : PwHideIcon} onClick={login.handleClickPw} />
           </S.PasswordBox>
-          <S.Button onClick={() => navigate("/")}>Login</S.Button>
-          <S.NewUser> New User? <S.GoSignup onClick={() => navigate("/signup")}>SignUp</S.GoSignup></S.NewUser>
+          <S.Button onClick={login.handleClickLogin}>Login</S.Button>
+          <S.NewUser>
+            {" "}
+            New User? <S.GoSignup onClick={login.GoToSignUp}>SignUp</S.GoSignup>
+          </S.NewUser>
         </S.Rightbar>
       </S.Container>
     </S.LoginMain>

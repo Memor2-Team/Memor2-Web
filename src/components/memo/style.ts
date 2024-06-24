@@ -74,7 +74,7 @@ export const Title = styled.span`
 `;
 
 export const Writer = styled.span`
-  width: 20%;
+  width: 25%;
 
   color: #777777;
   font-family: Pretendard-Bold;

@@ -8,7 +8,7 @@ const PageTemplate = ({ children }: ChildProps) => {
   const { pathname } = useLocation();
 
   return <Container>
-    {pathname !== "/login" && pathname !== "/signup" && pathname !=="/my-info" && <Sidebar />}
+    {pathname !== "/login" && pathname !== "/sign-up" && pathname !=="/my-info" && <Sidebar />}
     <Layout>{children}</Layout>
   </Container>;
 };

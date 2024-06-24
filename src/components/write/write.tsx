@@ -1,52 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./style";
-import { Memor2Axios } from "src/libs/axios/customAxios";
+import useWrite from "src/hooks/write/useWrite";
 
 const MemoWrite = () => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-
-  const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
-  };
-
-  const handleChangeContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setContent(e.target.value);
-  };
-
-  const handleClickCreate = async () => {
-    try {
-      await Memor2Axios.post("post", {}, {
-        params: {
-          title: title,
-          content: content,
-        },
-      }).then((res) => {
-        console.log(res);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { ...write } = useWrite();
 
   return (
     <S.MemoWritePage>
       <S.MemoWriteContainer>
         <S.TitleWrap>
           <S.Title
-            value={title}
+            value={write.title}
             placeholder="제목을 입력해주세요"
-            onChange={handleChangeTitle}></S.Title>
+            onChange={write.handleChangeTitle}></S.Title>
         </S.TitleWrap>
         <S.ContentWrap>
           <S.Content
-            value={content}
+            value={write.content}
             placeholder="내용을 작성하세요"
-            onChange={handleChangeContent}></S.Content>
+            onChange={write.handleChangeContent}></S.Content>
         </S.ContentWrap>
       </S.MemoWriteContainer>
       <S.CreateButtonWrap>
-        <S.CreateButton onClick={handleClickCreate}>생성하기</S.CreateButton>
+        <S.CreateButton onClick={write.handleClickCreate}>생성하기</S.CreateButton>
       </S.CreateButtonWrap>
     </S.MemoWritePage>
   );

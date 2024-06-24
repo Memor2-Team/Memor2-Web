@@ -5,7 +5,6 @@ import UserInfoIcon from "src/assets/img/sidebar/User_Info_Icon.svg";
 import MemoCreateIcon from "src/assets/img/sidebar/MemoCreate_Icon.svg";
 import MemoModifyIcon from "src/assets/img/sidebar/MemoModify_Icon.svg";
 import MemoDeleteIcon from "src/assets/img/sidebar/MemoDelete_Icon.svg";
-import Myinfo from "../MyInfo/Myinfo";
 
 const Sidebar = () => {
   const { ...sidebar } = useSidebar();

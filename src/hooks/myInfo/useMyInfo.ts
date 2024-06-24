@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Memor2Axios } from "src/libs/axios/customAxios";
 import token from "src/libs/token/token";
 
 const useMyInfo = () => {
+  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState<any>([]);
 
+  const handleClickReturn = () => {
+    navigate(-1);
+  };
+
   const handleClickLogout = () => {
-    window.location.href = "/login"
+    window.location.href = "/login";
     token.clearToken();
-  }
+  };
 
   useEffect(() => {
     const UserInfo = async () => {
@@ -26,7 +32,8 @@ const useMyInfo = () => {
 
   return {
     userInfo,
-    handleClickLogout
+    handleClickReturn,
+    handleClickLogout,
   };
 };
 

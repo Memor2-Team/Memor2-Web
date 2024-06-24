@@ -12,6 +12,15 @@ export const ProfileMain = styled.div`
     align-items:center;
 `
 
+export const ReturnButton = styled.img`
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+`
+
 export const ProfileContainer = styled.div`
     position: absolute;
     width: 650px;

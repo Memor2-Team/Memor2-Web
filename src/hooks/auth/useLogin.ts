@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Memor2Axios } from "src/libs/axios/customAxios";
+import axios from "axios";
+import CONFIG from "src/config/config.json";
 import token from "src/libs/token/token";
 import {
   ACCESS_TOKEN_KEY,
@@ -33,7 +34,7 @@ const useLogin = () => {
 
   const handleClickLogin = async () => {
     try {
-      await Memor2Axios.post("auth/sign-in", {
+      await axios.post(`${CONFIG.server}/auth/sign-in`, {
         email: email,
         password: password,
       }).then((res) => {

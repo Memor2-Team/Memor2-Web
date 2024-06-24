@@ -28,7 +28,8 @@ const SignUp = () => {
           </S.EmailBox>
           <S.PasswordBox>
             <S.PasswordT>Password</S.PasswordT>
-            <S.PasswordInput 
+            <S.PasswordInput
+              type="password"
               value={signUp.password} 
               placeholder='Enter your Password' 
               onChange={signUp.handleChangePassword} 

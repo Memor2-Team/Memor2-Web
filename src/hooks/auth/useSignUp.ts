@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Memor2Axios } from "src/libs/axios/customAxios";
+import axios from "axios";
+import CONFIG from "src/config/config.json";
 import { showToast } from "src/libs/toast/swal";
 
 const useSignUp = () => {
@@ -29,7 +30,7 @@ const useSignUp = () => {
 
   const handleClickSignUp = async () => {
     try {
-      await Memor2Axios.post("auth/sign-up", {
+      await axios.post(`${CONFIG.server}/auth/sign-up`, {
         name: id,
         email: email,
         password: password,

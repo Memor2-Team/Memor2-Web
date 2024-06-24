@@ -7,8 +7,9 @@ import { showToast } from "src/libs/toast/swal";
 
 const useSidebar = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState("my");
+  const [category, setCategory] = useState<string>("my");
   const [memoList, setMemoList] = useState<MemoListProps[]>([]);
+  const [myName, setMyName] = useState<string>("");
 
   const handleClickCategory = (category: string) => {
     setCategory(category);
@@ -49,6 +50,20 @@ const useSidebar = () => {
   };
 
   useEffect(() => {
+    const UserInfo = async () => {
+      try {
+        await Memor2Axios.get("user").then((res) => {
+          setMyName(res.data.email);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    UserInfo();
+  }, []);
+
+  useEffect(() => {
     const PostListRead = async () => {
       try {
         await Memor2Axios.get(`post/list-${category}`, {
@@ -69,6 +84,7 @@ const useSidebar = () => {
   }, [category]);
 
   return {
+    myName,
     category,
     memoList,
     handleClickCategory,

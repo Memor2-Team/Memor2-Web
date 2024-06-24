@@ -5,6 +5,7 @@ import UserInfoIcon from "src/assets/img/sidebar/User_Info_Icon.svg";
 import MemoCreateIcon from "src/assets/img/sidebar/MemoCreate_Icon.svg";
 import MemoModifyIcon from "src/assets/img/sidebar/MemoModify_Icon.svg";
 import MemoDeleteIcon from "src/assets/img/sidebar/MemoDelete_Icon.svg";
+import Myinfo from "../MyInfo/Myinfo";
 
 const Sidebar = () => {
   const { ...sidebar } = useSidebar();
@@ -19,28 +20,50 @@ const Sidebar = () => {
         </S.UserInfoBox>
       </S.UserInfoWrap>
       <S.CategoryWrap>
-        <S.AllButton $color={sidebar.category} onClick={() => sidebar.handleClickCategory("all")}>전체</S.AllButton>
-        <S.MyButton $color={sidebar.category} onClick={() => sidebar.handleClickCategory("my")}>내 메모</S.MyButton>
+        <S.AllButton
+          $color={sidebar.category}
+          onClick={() => sidebar.handleClickCategory("all")}>
+          전체
+        </S.AllButton>
+        <S.MyButton
+          $color={sidebar.category}
+          onClick={() => sidebar.handleClickCategory("my")}>
+          내 메모
+        </S.MyButton>
       </S.CategoryWrap>
       <S.MemoListWrap>
         <S.MemoListButtonWrap>
-          <S.MemoListTitle>{sidebar.category === "my" ? "내가 작성한 메모" : "작성된 메모"}</S.MemoListTitle>
-          <S.MemoCreateButton src={MemoCreateIcon} onClick={() => navigate("write")}></S.MemoCreateButton>
+          <S.MemoListTitle>
+            {sidebar.category === "my" ? "내가 작성한 메모" : "작성된 메모"}
+          </S.MemoListTitle>
+          {sidebar.category === "my" && (
+            <S.MemoCreateButton
+              src={MemoCreateIcon}
+              onClick={() => navigate("write")}></S.MemoCreateButton>
+          )}
         </S.MemoListButtonWrap>
         <S.MemoList>
-        {sidebar.memoList.map((memo) => (
-          <S.Memo key={memo.idx}>
-            <S.MemoTitleWrap onClick={() => navigate(`/${memo.idx}`)}>
-              <S.MemoTitle>{memo.title}</S.MemoTitle>
-            </S.MemoTitleWrap>
-            <S.MemoButtonWrap>
-              <S.MemoButton src={MemoModifyIcon} onClick={() => navigate(`/modify/${memo.idx}`)}></S.MemoButton>
-            </S.MemoButtonWrap>
-            <S.MemoButtonWrap>
-              <S.MemoButton src={MemoDeleteIcon} onClick={() => sidebar.handleClickDelete(memo.idx)}></S.MemoButton>
-            </S.MemoButtonWrap>
-          </S.Memo>
-        ))}
+          {sidebar.memoList.map((memo) => (
+            <S.Memo key={memo.idx}>
+              <S.MemoTitleWrap onClick={() => navigate(`/${memo.idx}`)}>
+                <S.MemoTitle>{memo.title}</S.MemoTitle>
+              </S.MemoTitleWrap>
+              {sidebar.myName === memo.author && (
+                <>
+                  <S.MemoButtonWrap>
+                    <S.MemoButton
+                      src={MemoModifyIcon}
+                      onClick={() => navigate(`/modify/${memo.idx}`)}></S.MemoButton>
+                  </S.MemoButtonWrap>
+                  <S.MemoButtonWrap>
+                    <S.MemoButton
+                      src={MemoDeleteIcon}
+                      onClick={() =>sidebar.handleClickDelete(memo.idx)}></S.MemoButton>
+                  </S.MemoButtonWrap>
+                </>
+              )}
+            </S.Memo>
+          ))}
         </S.MemoList>
       </S.MemoListWrap>
     </S.Container>

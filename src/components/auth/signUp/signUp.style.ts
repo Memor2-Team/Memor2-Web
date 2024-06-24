@@ -17,7 +17,7 @@ export const Container = styled.div`
     box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.2);
     border-radius:10px;
     background-color:white;
-    z-index:999;
+    z-index: 10;
     display:flex;
     flex-direction:row;
 `
@@ -122,7 +122,7 @@ export const IDBox = styled.div`
     position: absolute;
     width: 411px;
     height: 95px;
-    left: 96px;
+    left: 100px;
     top: 153px;
 `
 
@@ -144,6 +144,7 @@ export const IDInput = styled.input`
     box-sizing: border-box;
 
     position: absolute;
+    z-index: 100;
     width: 411px;
     height: 50px;
     top: 40px;
@@ -194,6 +195,7 @@ export const EmailInput = styled.input`
     width: 411px;
     height: 50px;
     top: 40px;
+    z-index: 100;
 
     background: #FFF;
     border: 1px solid #000000;
@@ -242,6 +244,7 @@ export const PasswordInput = styled.input`
     width: 411px;
     height: 50px;
     top: 140px;
+    z-index: 100;
 
     background: #FFF;
     border: 1px solid #000000;

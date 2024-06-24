@@ -1,10 +1,10 @@
 import React from "react";
 import MemoryLogo from 'src/assets/img/Memory Logo.svg';
 import * as S from './signUp.style';
-import { useNavigate } from "react-router-dom";
+import useSignUp from "src/hooks/auth/useSignUp";
 
 const SignUp = () => {
-  const navigate = useNavigate();
+  const { ...signUp } = useSignUp();
 
   return (
     <S.SignUpMain>
@@ -20,17 +20,21 @@ const SignUp = () => {
           <S.SignUpT>Sign Up</S.SignUpT>
           <S.IDBox>
             <S.IDT>ID</S.IDT>
-            <S.IDInput placeholder='Park Sihyun' />
+            <S.IDInput value={signUp.id} placeholder='Park Sihyun' onChange={signUp.handleChangeId} />
           </S.IDBox>
           <S.EmailBox>
             <S.EmailT>Email</S.EmailT>
-            <S.EmailInput placeholder='sihyunpark@gmail.com' />
+            <S.EmailInput value={signUp.email} placeholder='sihyunpark@gmail.com' onChange={signUp.handleChangeEmail} />
           </S.EmailBox>
           <S.PasswordBox>
             <S.PasswordT>Password</S.PasswordT>
-            <S.PasswordInput placeholder='Enter your Password' />
+            <S.PasswordInput 
+              value={signUp.password} 
+              placeholder='Enter your Password' 
+              onChange={signUp.handleChangePassword} 
+              onKeyDown={signUp.handleKeyDown} />
           </S.PasswordBox>
-          <S.Button onClick={() => navigate("/login")}>Sign Up</S.Button>
+          <S.Button onClick={signUp.handleClickSignUp}>Sign Up</S.Button>
         </S.Rightbar>
       </S.Container>
     </S.SignUpMain>

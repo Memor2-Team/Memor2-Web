@@ -27,7 +27,7 @@ const useWrite = () => {
             content: content,
           },
         }
-      ).then((res) => {
+      ).then(() => {
         showToast("success", "메모 등록 성공");
         navigate("/");
       });

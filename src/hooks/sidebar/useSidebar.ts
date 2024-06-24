@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Memor2Axios } from "src/libs/axios/customAxios";
 import { MemoListProps } from "src/types/memo/memoListProps.interface";
 import Swal from "sweetalert2";
 import { showToast } from "src/libs/toast/swal";
 
 const useSidebar = () => {
+  const { pathname } = useLocation();
   const navigate = useNavigate();
   const [category, setCategory] = useState<string>("my");
   const [memoList, setMemoList] = useState<MemoListProps[]>([]);
@@ -69,7 +70,7 @@ const useSidebar = () => {
         await Memor2Axios.get(`post/list-${category}`, {
           params: {
             page: 1,
-            size: 10,
+            size: 100,
           },
         }).then((res) => {
           console.log(res.data.data);
@@ -81,7 +82,7 @@ const useSidebar = () => {
     };
 
     PostListRead();
-  }, [category]);
+  }, [pathname, category]);
 
   return {
     myName,

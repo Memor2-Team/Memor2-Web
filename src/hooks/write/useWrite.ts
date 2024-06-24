@@ -28,7 +28,6 @@ const useWrite = () => {
           },
         }
       ).then((res) => {
-        console.log(res);
         showToast("success", "메모 등록 성공");
         navigate("/");
       });

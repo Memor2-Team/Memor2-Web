@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Memor2Axios } from "src/libs/axios/customAxios";
 import { MemoListProps } from "src/types/memo/memoListProps.interface";
+import Swal from "sweetalert2";
+import { showToast } from "src/libs/toast/swal";
 
 const useSidebar = () => {
   const navigate = useNavigate();
@@ -17,6 +19,35 @@ const useSidebar = () => {
     }
   };
 
+  const handleClickDelete = (id: number) => {
+    Swal.fire({
+      title: "정말로 메모를 삭제하시겠습니까?",
+      text: "메모를 삭제하면 다시 되돌릴 수 없습니다.",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#D9D9D9",
+      confirmButtonText: "메모 삭제",
+      cancelButtonText: "취소",
+      reverseButtons: false,
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await Memor2Axios.delete("post", {
+            params: { idx: id },
+          }).then(() => {
+            showToast("success", "메모 삭제성공");
+            setMemoList((prevData) =>
+              prevData.filter((item) => item.idx !== id)
+            );
+          });
+        } catch (error) {
+          showToast("error", "메모 삭제실패");
+          console.log(error);
+        }
+      }
+    });
+  };
+
   useEffect(() => {
     const PostListRead = async () => {
       try {
@@ -26,8 +57,8 @@ const useSidebar = () => {
             size: 10,
           },
         }).then((res) => {
-            console.log(res.data.data);
-            setMemoList(res.data.data);
+          console.log(res.data.data);
+          setMemoList(res.data.data);
         });
       } catch (error) {
         console.log(error);
@@ -41,6 +72,7 @@ const useSidebar = () => {
     category,
     memoList,
     handleClickCategory,
+    handleClickDelete,
   };
 };
 

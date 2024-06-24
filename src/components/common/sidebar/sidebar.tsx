@@ -37,7 +37,7 @@ const Sidebar = () => {
               <S.MemoButton src={MemoModifyIcon} onClick={() => navigate(`/modify/${memo.idx}`)}></S.MemoButton>
             </S.MemoButtonWrap>
             <S.MemoButtonWrap>
-              <S.MemoButton src={MemoDeleteIcon}></S.MemoButton>
+              <S.MemoButton src={MemoDeleteIcon} onClick={() => sidebar.handleClickDelete(memo.idx)}></S.MemoButton>
             </S.MemoButtonWrap>
           </S.Memo>
         ))}

@@ -8,7 +8,7 @@ const useMyInfo = () => {
   const [userInfo, setUserInfo] = useState<any>([]);
 
   const handleClickReturn = () => {
-    navigate(-1);
+    navigate("/");
   };
 
   const handleClickLogout = () => {
